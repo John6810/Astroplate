@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: read # gitleaks lists PR commits on pull_request events
 
 concurrency:
   group: security-${{ github.ref }}
