@@ -3,7 +3,7 @@ title: "Why I Don't Use AVM Modules As-Is (And What I Do Instead)"
 meta_title: ""
 description: "How I adapted Azure Verified Modules patterns into 35 custom Terraform modules for an enterprise landing zone — and why using AVM directly wasn't an option with Terragrunt."
 date: 2026-04-08T00:00:00Z
-image: "/images/og-image.png"
+image: "/images/blog/why-not-avm-as-is.png"
 categories: ["Landing Zone"]
 author: "Jonathan Aerts"
 tags: ["avm", "terraform", "azure", "terragrunt", "modules", "patterns"]

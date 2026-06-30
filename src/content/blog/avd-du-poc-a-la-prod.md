@@ -3,7 +3,7 @@ title: "Azure Virtual Desktop: from POC to prod, the hardening checklist"
 meta_title: ""
 description: "A private AVD POC works — but it's missing security, observability, scalability and DR before prod. The ROI-prioritised roadmap (P1→P5) plus the technical debt to clear: FSLogix NTFS ACLs, secret rotation, AVD Insights, custom image, Conditional Access, FSLogix backup."
 date: 2026-06-22T00:00:00Z
-image: "/images/og-image.png"
+image: "/images/blog/avd-du-poc-a-la-prod.png"
 categories: ["Azure Virtual Desktop"]
 author: "Jonathan Aerts"
 tags:

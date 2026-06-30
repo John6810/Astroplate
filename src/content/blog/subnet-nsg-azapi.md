@@ -3,7 +3,7 @@ title: "SubnetWithNsg: How Azure Policy Deny Forced Me to Use azapi"
 meta_title: ""
 description: "How Azure Landing Zone Deny policies block standard Terraform subnet creation, and why azapi_resource is the only reliable fix for atomic subnet + NSG deployment."
 date: 2026-04-05T00:00:00Z
-image: "/images/og-image.png"
+image: "/images/blog/subnet-nsg-azapi.png"
 categories: ["Networking"]
 author: "Jonathan Aerts"
 tags: ["azure-policy", "azapi", "terraform", "subnet", "nsg", "landing-zone"]

@@ -3,7 +3,7 @@ title: "When terraform plan says 'no changes' and the feature is broken anyway"
 meta_title: ""
 description: "Two well-meaning Azure automations — policy-driven DNS wiring and drift suppression via ignore_changes — combine into a silent outage that no plan ever sees. An AVD private endpoint war story, and the general lesson."
 date: 2026-06-25T00:00:00Z
-image: "/images/og-image.png"
+image: "/images/blog/terraform-plan-no-changes.png"
 categories: ["Landing Zone"]
 author: "Jonathan Aerts"
 tags: ["terraform", "azure", "landing-zone", "avd", "private-endpoint", "iac"]

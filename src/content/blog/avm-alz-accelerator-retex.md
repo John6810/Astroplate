@@ -3,7 +3,7 @@ title: "The AVM ALZ accelerator is solid. Here's what we add on top (and what we
 meta_title: ""
 description: "A production retrospective on the Azure AVM ALZ accelerator: three adjustments we had to make (library pinning, retries, VMSS exclusions) and three things we'd do differently (state splitting, tests, centralised inventory)."
 date: 2026-05-15T00:00:00Z
-image: "/images/og-image.png"
+image: "/images/blog/avm-alz-accelerator-retex.png"
 categories: ["Landing Zone"]
 author: "Jonathan Aerts"
 tags:

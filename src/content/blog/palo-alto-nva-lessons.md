@@ -3,7 +3,7 @@ title: "Azure Landing Zone with Palo Alto NVA: Lessons Learned"
 meta_title: ""
 description: "Hard-won lessons from deploying Palo Alto VM-Series as NVA in an Azure Landing Zone: accelerated networking, ILB HA ports, bootstrap pitfalls, security hardening, and monitoring."
 date: 2026-04-12T00:00:00Z
-image: "/images/og-image.png"
+image: "/images/blog/palo-alto-nva-lessons.png"
 categories: ["Networking"]
 author: "Jonathan Aerts"
 tags: ["palo-alto", "azure", "nva", "ilb", "terraform", "landing-zone"]

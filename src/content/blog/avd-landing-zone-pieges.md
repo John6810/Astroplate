@@ -3,7 +3,7 @@ title: "Azure Virtual Desktop in a regulated Landing Zone: the traps no doc tell
 meta_title: ""
 description: "A field report on a private AVD deployment in an Azure Landing Zone: control-plane region split, the global PE for rdweb, Entra Kerberos, Entra-joined RDP auth, scaling plan RBAC and FSLogix cost. The non-obvious learnings, not the RTFM."
 date: 2026-06-20T00:00:00Z
-image: "/images/og-image.png"
+image: "/images/blog/avd-landing-zone-pieges.png"
 categories: ["Azure Virtual Desktop"]
 author: "Jonathan Aerts"
 tags:

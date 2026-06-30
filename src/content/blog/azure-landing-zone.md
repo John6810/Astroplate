@@ -3,7 +3,7 @@ title: "Building 35 Terraform Modules for an Azure Landing Zone"
 meta_title: ""
 description: "How I built an enterprise Azure Landing Zone from scratch with 35 custom Terraform modules aligned with Azure Verified Modules patterns, Palo Alto NVA, and Terragrunt."
 date: 2026-04-15T00:00:00Z
-image: "/images/og-image.png"
+image: "/images/blog/azure-landing-zone.png"
 categories: ["Landing Zone"]
 author: "Jonathan Aerts"
 tags: ["terraform", "azure", "landing-zone", "terragrunt", "palo-alto", "avm"]
