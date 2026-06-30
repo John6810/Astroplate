@@ -1,0 +1,19 @@
+title = "Gitleaks config — Astroplate (jonathan-aerts.dev)"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "cloudflare-api-token"
+description = "Cloudflare API Token"
+regex = '''(?i)(cloudflare|cf)[\w-]*(token|api)[\w-]*[=:]\s*["']?[a-zA-Z0-9_-]{40,}["']?'''
+tags = ["cloudflare", "credentials"]
+
+[allowlist]
+description = "Lockfiles, generated and build output are not source secrets"
+paths = [
+  '''package-lock\.json''',
+  '''pnpm-lock\.yaml''',
+  '''dist/.*''',
+  '''\.astro/.*''',
+]

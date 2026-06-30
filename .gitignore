@@ -26,5 +26,8 @@ pnpm-debug.log*
 # ide
 .idea/
 
+# local preview / claude tooling
+.claude/
+
 # skills
 .agents/skills/skill-creator
