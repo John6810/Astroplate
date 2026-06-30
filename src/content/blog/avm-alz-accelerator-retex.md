@@ -59,7 +59,7 @@ provider "alz" {
 }
 ```
 
-`library_overwrite_enabled = false` prevents the silent merge of local overrides into the upstream lib. The `custom_url` points to a versioned `lib/` folder in the repo where we store our archetype overrides (`connectivity.alz_archetype_override.yaml`, `landing_zones.alz_archetype_override.yaml`, `platform.alz_archetype_override.yaml`) and the per-environment architecture definitions.
+`library_overwrite_enabled = false` keeps it deterministic — one library reference can't silently overwrite files from another (a conflict errors out instead of letting the last one win); the local `lib/` is still merged in additively. The `custom_url` points to a versioned `lib/` folder in the repo where we store our archetype overrides (`connectivity.alz_archetype_override.yaml`, `landing_zones.alz_archetype_override.yaml`, `platform.alz_archetype_override.yaml`) and the per-environment architecture definitions.
 
 **The transferable lesson.** Pinning isn't a Terraform question, it's an audit question. As long as a dependency isn't fixed to a precise ref, you can't reproduce a past deployment. For a governance stack — where posture evolves through human decisions, not automatic bumps — it's non-negotiable.
 
