@@ -1,51 +1,52 @@
 ---
 # Banner
 banner:
-  title: "The Ultimate Starter Template You Need To Start Your Astro Project"
-  content: "Astroplate is a free starter template built with Astro and TailwindCSS, providing everything you need to jumpstart your Astro project and save valuable time."
+  title: "Jonathan Aerts — Senior Cloud Architect"
+  content: "J'architecture et j'automatise des plateformes cloud d'entreprise sur **Microsoft Azure** : Landing Zones, Infrastructure as Code et Kubernetes. Approche pragmatique, cost-effective, et orientée résultats concrets."
   image: "/images/banner.png"
   button:
     enable: true
-    label: "Fork Deploy and Edit Online 🚀"
-    link: "https://app.sitepins.com/new/clone?name=Astroplate&repository=https://github.com/zeon-studio/astroplate?aff=astroplate"
+    label: "Lire mon blog 📝"
+    link: "/blog"
 
 # Features
 features:
-  - title: "What's Included in Astroplate"
+  - title: "Expertise"
     image: "/images/service-1.png"
-    content: "Astroplate is a comprehensive starter template that includes everything you need to get started with your Astro project. What's Included in Astroplate"
+    content: "Architecte cloud senior spécialisé dans les environnements Azure d'entreprise, de la conception des Landing Zones à l'automatisation complète du déploiement."
     bulletpoints:
-      - "10+ Pre-build pages"
-      - "95+ Google Pagespeed Score"
-      - "Build with Astro and TailwindCSS for easy and customizable styling"
-      - "Fully responsive on all devices"
-      - "SEO-optimized for better search engine rankings"
-      - "**Open-source and free** for personal and commercial use"
+      - "**Azure Enterprise** — Landing Zones, gouvernance, sécurité et réseau à l'échelle"
+      - "**Infrastructure as Code** — Terraform & Terragrunt en production"
+      - "**Kubernetes** — déploiement, GitOps (ArgoCD), networking (Cilium, Traefik)"
+      - "**Automation** — pipelines CI/CD et workflows (n8n) self-hosted"
+      - "**Observabilité** — Prometheus & Grafana"
     button:
       enable: false
-      label: "Get Started Now"
-      link: "#"
+      label: ""
+      link: ""
 
-  - title: "Discover the Key Features Of Astro"
+  - title: "Ce qui me motive"
     image: "/images/service-2.png"
-    content: "Astro is an all-in-one web framework for building fast, content-focused websites. It offers a range of exciting features for developers and website creators. Some of the key features are:"
+    content: "Un fort instinct DIY et une préférence pour comprendre et implémenter moi-même plutôt que de déléguer à une boîte noire."
     bulletpoints:
-      - "Zero JS, by default: No JavaScript runtime overhead to slow you down."
-      - "Customizable: Tailwind, MDX, and 100+ other integrations to choose from."
-      - "UI-agnostic: Supports React, Preact, Svelte, Vue, Solid, Lit and more."
+      - "Des solutions cost-effective plutôt que du premium par défaut"
+      - "De l'automatisation partout où c'est pertinent"
+      - "Un homelab Kubernetes comme terrain d'expérimentation continue"
+      - "Le partage : ce blog documente mes architectures et retours d'expérience"
     button:
       enable: true
-      label: "Get Started Now"
-      link: "https://github.com/zeon-studio/astroplate"
+      label: "Découvrir le blog"
+      link: "/blog"
 
-  - title: "The Top Reasons to Choose Astro for Your Next Project"
+  - title: "Stack & outils"
     image: "/images/service-3.png"
-    content: "With Astro, you can build modern and content-focused websites without sacrificing performance or ease of use."
+    content: "Les technologies avec lesquelles je travaille au quotidien, en entreprise comme dans mon homelab."
     bulletpoints:
-      - "Instantly load static sites for better user experience and SEO."
-      - "Intuitive syntax and support for popular frameworks make learning and using Astro a breeze."
-      - "Use any front-end library or framework, or build custom components, for any project size."
-      - "Built on cutting-edge technology to keep your projects up-to-date with the latest web standards."
+      - "Cloud — Microsoft Azure"
+      - "IaC — Terraform, Terragrunt"
+      - "Conteneurs — Kubernetes, ArgoCD, Cilium, Traefik"
+      - "Automation — n8n, GitHub Actions"
+      - "Monitoring — Prometheus, Grafana"
     button:
       enable: false
       label: ""

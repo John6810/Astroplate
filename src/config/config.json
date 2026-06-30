@@ -1,15 +1,15 @@
 {
   "site": {
-    "title": "Astroplate",
-    "base_url": "https://astroplate.netlify.app",
+    "title": "Jonathan Aerts — Senior Cloud Platform Architect",
+    "base_url": "https://jonathan-aerts.dev",
     "base_path": "/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
-    "logo": "/images/logo.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
+    "logo": "",
+    "logo_darkmode": "",
     "logo_width": "150",
     "logo_height": "30",
-    "logo_text": "Astroplate"
+    "logo_text": "Jonathan Aerts"
   },
 
   "settings": {
@@ -23,20 +23,20 @@
   },
 
   "announcement": {
-    "enable": true,
-    "content": "<span class='text-center block'>♥️ Loving Astroplate? <a class='underline' href='https://github.com/zeon-studio/astroplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>",
+    "enable": false,
+    "content": "",
     "expire_days": 7
   },
 
   "params": {
     "contact_form_action": "#",
-    "copyright": "Designed And Developed by [Zeon Studio](https://zeon.studio)"
+    "copyright": "© Jonathan Aerts"
   },
 
   "navigation_button": {
     "enable": true,
-    "label": "Github",
-    "link": "https://github.com/zeon-studio/astroplate"
+    "label": "GitHub",
+    "link": "https://github.com/John6810"
   },
 
   "google_tag_manager": {
@@ -45,15 +45,15 @@
   },
 
   "disqus": {
-    "enable": true,
+    "enable": false,
     "shortname": "themefisher-template",
     "settings": {}
   },
 
   "metadata": {
-    "meta_author": "zeon.studio",
+    "meta_author": "Jonathan Aerts",
     "meta_image": "/images/og-image.png",
-    "meta_description": "astro and tailwind boilerplate"
+    "meta_description": "Senior Cloud Platform Architect — Azure Landing Zones, Terraform/GitOps, gouvernance enterprise. Belgique · Luxembourg."
   },
 
   "llms": {
