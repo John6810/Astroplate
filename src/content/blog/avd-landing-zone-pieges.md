@@ -62,9 +62,9 @@ This is trap #1 that breaks the final UX. Everything else is OK (workspace, host
 
 The hub's Private DNS Resolver resolves the `privatelink.*` zones and forwards the rest. But with a VPN NRPT that catch-alls `.` to the Palo's DNS proxy, `rdweb.wvd.microsoft.com` requests (a **public** Microsoft record) can be blocked or not forwarded depending on the firewall config.
 
-The solution is architectural: deploy a **Private Endpoint for the `global` subresource** on a **dedicated workspace** (you must not attach application groups to it, or you break the whole tenant). Microsoft then CNAMEs `rdweb.wvd.microsoft.com` → a private record in `privatelink-global.wvd.microsoft.com`. Everything stays private.
+The solution is architectural: deploy a **Private Endpoint for the `global` subresource** on a **dedicated placeholder workspace** with no application groups attached. Microsoft then CNAMEs `rdweb.wvd.microsoft.com` → a private record in `privatelink-global.wvd.microsoft.com`. Everything stays private.
 
-Careful: this `global` workspace is a **tenant-wide singleton** — a single global PE for the whole AVD fleet. If there are other AVD deployments elsewhere in the tenant, you have to coordinate.
+Careful: this `global` workspace is a **tenant-wide singleton** — a single global PE for the whole AVD fleet. **Deleting that workspace breaks feed discovery for every deployment in the tenant.** If there are other AVD deployments elsewhere, you have to coordinate.
 
 ### DINE policies only cover the standard subresources
 
@@ -131,7 +131,7 @@ Fix: **custom RDP properties** on the host pool:
 targetisaadjoined:i:1;enablerdsaadauth:i:1
 ```
 
-`targetisaadjoined` forces the client into the WAM flow (Web Account Manager, the modern Microsoft popup). `enablerdsaadauth` enables Entra SSO if the client device is also Entra-joined. No warning, no obvious doc.
+`enablerdsaadauth` is the modern property: it makes the client authenticate to the host with Microsoft Entra ID (the web-account / WAM flow) and provides SSO — it _replaces_ `targetisaadjoined`. `targetisaadjoined` is the legacy fallback it supersedes: it allows username/password connections to Entra-joined hosts from clients that don't meet the modern requirements (non-Windows clients, or local Windows devices not joined to Entra). Setting both covers the modern SSO path plus the legacy fallback. No warning, no obvious doc.
 
 ---
 
