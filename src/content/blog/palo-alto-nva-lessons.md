@@ -216,7 +216,7 @@ resource "azurerm_key_vault" "fw" {
 
 ## Monitoring with Application Insights
 
-Each firewall instance gets its own Application Insights resource. PAN-OS can push metrics (session counts, throughput, threat logs) to APPI via a Service Principal.
+Each firewall instance gets its own Application Insights resource. PAN-OS pushes its custom metrics (session counts, throughput, and so on) to App Insights using the **instrumentation key** (local auth) — the key is pasted into the PAN-OS device settings. Keep `local_authentication_disabled = false` on the App Insights resource: disabling it would silently break key-authenticated ingestion from the firewalls.
 
 ```hcl
 resource "azurerm_application_insights" "fw" {
@@ -229,17 +229,20 @@ resource "azurerm_application_insights" "fw" {
 }
 ```
 
-The SPN that PAN-OS uses to push metrics gets a **custom least-privilege role** instead of a built-in role. Built-in roles like "Monitoring Metrics Publisher" include permissions the firewall doesn't need. The custom role is scoped to the subscription:
+Separately, the VM-Series **Azure plugin** needs a service principal to read Azure resource metadata (Palo Alto [documents the required permissions](https://docs.paloaltonetworks.com/vm-series/11-1/vm-series-deployment/set-up-the-vm-series-firewall-on-azure/about-the-vm-series-firewall-on-azure/vm-series-on-azure-service-principal-permissions)). Rather than a broad built-in role, it gets a **custom least-privilege role** scoped to the subscription, with only the reads the plugin actually uses:
 
 ```hcl
-resource "azurerm_role_definition" "panos_metrics" {
-  name  = "${local.prefix}-${var.workload}-panos-metrics"
+resource "azurerm_role_definition" "panos_appinsights" {
+  name  = "PAN-OS AppInsights ${local.prefix}-${var.workload}"
   scope = data.azurerm_subscription.current.id
 
   permissions {
     actions = [
-      "Microsoft.Insights/Metrics/Read",
-      "Microsoft.Insights/MetricDefinitions/Read",
+      "Microsoft.Authorization/*/read",
+      "Microsoft.Network/networkInterfaces/read",
+      "Microsoft.Network/networkSecurityGroups/read",
+      "Microsoft.Network/virtualNetworks/read",
+      "Microsoft.Compute/virtualMachines/read",
     ]
   }
 
@@ -247,7 +250,7 @@ resource "azurerm_role_definition" "panos_metrics" {
 }
 ```
 
-Notice the role name includes `${local.prefix}-${var.workload}`. This prevents naming collisions between prod and nprd, which share the same subscription. Without the environment-specific prefix, Terraform would try to create two custom roles with the same name and fail.
+Note the metrics push and this role are two different things: the firewall **publishes** metrics with the App Insights instrumentation key (no RBAC), while this service principal only **reads** Azure resource metadata for the plugin. And the role name includes `${local.prefix}-${var.workload}` to prevent naming collisions between prod and nprd, which share the same subscription — without the environment-specific suffix, Terraform would try to create two custom roles with the same name and fail.
 
 ## What I'd Do Differently
 
