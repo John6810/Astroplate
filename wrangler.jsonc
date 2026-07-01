@@ -1,11 +1,32 @@
 {
-  // Cloudflare Workers — Static Assets deployment
-  // Deploy:  npm run deploy:cf-workers
-  // Preview: npm run preview:cf-workers
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Cloudflare Workers — Static Assets deployment (CV + blog).
+  // Served on the custom domain jonathan-aerts.dev (attached in the dashboard).
+  //   Deploy:  npm run deploy:cf-workers
+  //   Preview: npm run preview:cf-workers
   "name": "astroplate",
-  "compatibility_date": "2026-03-02",
+  // Pinned so the runtime feature set is deterministic across deploys.
+  // Bump deliberately, not on a schedule.
+  "compatibility_date": "2026-06-02",
   "assets": {
     "directory": "./dist",
+    // Serve dist/404.html (from src/pages/404.astro) on unmatched routes.
     "not_found_handling": "404-page",
+  },
+  // Production hygiene: the site lives on the custom domain, so don't also
+  // serve it on *.workers.dev (avoids duplicate-content indexing / exposure).
+  // Flip to true if you need the workers.dev URL for testing.
+  "workers_dev": false,
+  // Per-version preview URLs for PR / branch deploys (Workers Builds).
+  "preview_urls": true,
+  // Observability — request logs + distributed traces. Free-tier friendly.
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+    },
+    "traces": {
+      "enabled": true,
+    },
   },
 }

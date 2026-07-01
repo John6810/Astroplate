@@ -1,0 +1,36 @@
+# Cloudflare Workers — Static Assets headers
+# https://developers.cloudflare.com/workers/static-assets/headers/
+
+# ── Security headers (all responses) ──
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+  X-DNS-Prefetch-Control: off
+  # Permissive-but-real CSP. Astroplate self-hosts fonts (Astro Font API) and
+  # hydrates React islands from /_astro (script-src 'self'); 'unsafe-inline' is
+  # needed for Astro's inline hydration + view-transition scripts and inline
+  # styles. Tighten later with hashes/nonces if desired.
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; object-src 'none'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline'; connect-src 'self'; manifest-src 'self'; frame-src 'none'
+
+# ── Fingerprinted build output — cache hard (immutable) ──
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── Agent / SEO text endpoints — 1h edge+browser cache ──
+/llms.txt
+  Cache-Control: public, max-age=3600
+/llms-full.txt
+  Cache-Control: public, max-age=3600
+/robots.txt
+  Cache-Control: public, max-age=3600
+/sitemap-index.xml
+  Cache-Control: public, max-age=3600
+/sitemap-0.xml
+  Cache-Control: public, max-age=3600
