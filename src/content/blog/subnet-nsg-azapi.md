@@ -78,7 +78,7 @@ resource "azapi_resource" "subnet" {
 
   body = {
     properties = {
-      addressPrefix = each.value.address_prefix
+      addressPrefixes = each.value.address_prefixes
       networkSecurityGroup = each.value.nsg_id != null ? {
         id = each.value.nsg_id
       } : null
@@ -115,7 +115,7 @@ The interface is a simple list of subnet objects:
 variable "subnets" {
   type = list(object({
     name                            = string
-    address_prefix                  = string
+    address_prefixes                = list(string)
     nsg_id                          = optional(string)
     route_table_id                  = optional(string)
     default_outbound_access_enabled = optional(bool, false)
@@ -128,10 +128,9 @@ variable "subnets" {
 
   validation {
     condition = alltrue([
-      for s in var.subnets :
-      can(regex("^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/\d{1,2}$", s.address_prefix))
+      for s in var.subnets : length(s.address_prefixes) >= 1
     ])
-    error_message = "Each subnet address_prefix must be a valid CIDR block (e.g. 10.0.1.0/24)."
+    error_message = "Each subnet must have at least one address prefix (a CIDR block, e.g. 10.0.1.0/24)."
   }
 
   validation {
@@ -204,19 +203,19 @@ inputs = {
   subnets = [
     {
       name           = "snet-api-prod-gwc-nodes"
-      address_prefix = "10.238.1.0/24"
+      address_prefixes = ["10.238.1.0/24"]
       nsg_id         = dependency.nsg_api.outputs.ids["nodes"]
       route_table_id = dependency.rt_api.outputs.id
     },
     {
       name           = "snet-api-prod-gwc-pods"
-      address_prefix = "10.238.2.0/22"
+      address_prefixes = ["10.238.2.0/22"]
       nsg_id         = dependency.nsg_api.outputs.ids["pods"]
       route_table_id = dependency.rt_api.outputs.id
     },
     {
       name           = "snet-api-prod-gwc-apiserver"
-      address_prefix = "10.238.6.0/28"
+      address_prefixes = ["10.238.6.0/28"]
       nsg_id         = dependency.nsg_api.outputs.ids["apiserver"]
       route_table_id = dependency.rt_api.outputs.id
       delegation = {
@@ -234,7 +233,7 @@ Note the `-parallelism=1` flag. Azure does not allow parallel subnet operations 
 
 The module includes three validation rules that catch common mistakes before Terraform even reaches the plan stage:
 
-- **CIDR format validation** — Every `address_prefix` is validated with a regex to ensure it matches the `x.x.x.x/y` pattern. Catches typos like missing the prefix length or using colons instead of dots.
+- **Address prefix presence** — Every subnet must declare at least one `address_prefixes` entry (a CIDR block). In the full module this is an OR with an IPAM pool allocation. Catches subnets defined with no address range at all.
 - **Unique subnet names** — The `for_each` key is the subnet name. Duplicate names would silently drop subnets. The validation compares `length(var.subnets)` against `length(distinct(names))` to catch duplicates early.
 - **VNet resource ID format** — The `virtual_network_id` is validated against the full ARM resource ID pattern. Prevents accidentally passing a VNet name or a subnet ID instead of the parent VNet ID.
 
