@@ -192,12 +192,12 @@ The exemptions matter more than they look: pooled session hosts are **stateless 
 
 A user needs **three separate group memberships** to use AVD end-to-end. The permissions are orthogonal — one for feed discovery, one for OS login, one for the FSLogix profile — and missing any one produces a different, confusing failure:
 
-| Azure role                                          | Scope                            | What it unlocks                          |
-| --------------------------------------------------- | -------------------------------- | ---------------------------------------- |
-| **Desktop Virtualization User**                     | the Desktop + RemoteApp groups   | See the desktop/apps in the client feed  |
-| **Virtual Machine User Login**                      | the session-host resource group  | Entra sign-in on the VM                  |
-| **Storage File Data SMB Share Contributor**         | the FSLogix resource group       | Read/write the FSLogix profile           |
-| **Desktop Virtualization Power On Off Contributor** | the **subscription**             | Autoscale start/stop (service principal) |
+| Azure role                                          | Scope                           | What it unlocks                          |
+| --------------------------------------------------- | ------------------------------- | ---------------------------------------- |
+| **Desktop Virtualization User**                     | the Desktop + RemoteApp groups  | See the desktop/apps in the client feed  |
+| **Virtual Machine User Login**                      | the session-host resource group | Entra sign-in on the VM                  |
+| **Storage File Data SMB Share Contributor**         | the FSLogix resource group      | Read/write the FSLogix profile           |
+| **Desktop Virtualization Power On Off Contributor** | the **subscription**            | Autoscale start/stop (service principal) |
 
 That last one is the AVD service principal, and it **has to be at subscription scope** — assign it any lower (RG, host pool, VM) and Autoscale silently stops working. It's the only grant that lives in its own unit (`rbac-avd-autoscale`); the three user grants are declared **inline** with the resource they protect — the app-group grants in `dag-desktop`/`dag-app`, the VM-login grant in `sh-avd`, the SMB grant in `st-avd-fslogix`.
 
@@ -222,14 +222,14 @@ No weekend schedule → hosts stay off from Friday 19:00 to Monday 07:00. A `exc
 
 For a single `D4as_v7` session host, Autoscale weekdays 07:00–19:00 brings it from ~€300/month (always-on) to **~€200/month**:
 
-| Component                                                             | €/month  |
-| --------------------------------------------------------------------- | -------- |
-| VM D4as_v7 (Autoscale, 12h × 5 days)                                  | ~50      |
-| OS disk Premium P10 (128 GiB)                                         | ~17      |
-| **Azure Files Premium ZRS (500 GiB provisioned)**                     | **~104** |
-| Private Endpoints (5)                                                 | ~32      |
-| Key Vault Premium                                                     | ~0       |
-| AVD control plane (host pool / workspaces / app groups / scaling plan) | 0       |
+| Component                                                              | €/month  |
+| ---------------------------------------------------------------------- | -------- |
+| VM D4as_v7 (Autoscale, 12h × 5 days)                                   | ~50      |
+| OS disk Premium P10 (128 GiB)                                          | ~17      |
+| **Azure Files Premium ZRS (500 GiB provisioned)**                      | **~104** |
+| Private Endpoints (5)                                                  | ~32      |
+| Key Vault Premium                                                      | ~0       |
+| AVD control plane (host pool / workspaces / app groups / scaling plan) | 0        |
 
 The single biggest lever isn't compute — it's the **provisioned FSLogix quota**. Azure Files Premium bills on the quota you reserve, not what you use; dropping 500 GiB → 100 GiB saves ~€83/month. Size it to real usage. (The image gallery adds only the storage of the replicated image versions — a few euros — since AIB's build VM is ephemeral.)
 
