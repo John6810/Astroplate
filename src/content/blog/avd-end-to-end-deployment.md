@@ -220,18 +220,18 @@ No weekend schedule → hosts stay off from Friday 19:00 to Monday 07:00. A `exc
 
 ## Cost
 
-For a single `D4as_v7` session host, Autoscale weekdays 07:00–19:00 brings it from ~€300/month (always-on) to **~€200/month**:
+For a single `D4as_v7` session host, Autoscale weekdays 07:00–19:00 brings it from **≈€300/month** (always-on) down to **≈€200/month**:
 
 | Component                                                              | €/month  |
 | ---------------------------------------------------------------------- | -------- |
-| VM D4as_v7 (Autoscale, 12h × 5 days)                                   | ~50      |
-| OS disk Premium P10 (128 GiB)                                          | ~17      |
-| **Azure Files Premium ZRS (500 GiB provisioned)**                      | **~104** |
-| Private Endpoints (5)                                                  | ~32      |
-| Key Vault Premium                                                      | ~0       |
+| VM D4as_v7 (Autoscale, 12h × 5 days)                                   | ≈50      |
+| OS disk Premium P10 (128 GiB)                                          | ≈17      |
+| **Azure Files Premium ZRS (500 GiB provisioned)**                      | **≈104** |
+| Private Endpoints (5)                                                  | ≈32      |
+| Key Vault Premium                                                      | ≈0       |
 | AVD control plane (host pool / workspaces / app groups / scaling plan) | 0        |
 
-The single biggest lever isn't compute — it's the **provisioned FSLogix quota**. Azure Files Premium bills on the quota you reserve, not what you use; dropping 500 GiB → 100 GiB saves ~€83/month. Size it to real usage. (The image gallery adds only the storage of the replicated image versions — a few euros — since AIB's build VM is ephemeral.)
+The single biggest lever isn't compute — it's the **provisioned FSLogix quota**. Azure Files Premium bills on the quota you reserve, not what you use; dropping 500 GiB → 100 GiB saves ≈€83/month. Size it to real usage. (The image gallery adds only the storage of the replicated image versions — a few euros — since AIB's build VM is ephemeral.)
 
 ---
 
