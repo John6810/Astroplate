@@ -10,6 +10,12 @@ updates:
     # don't propose freshly-published versions that a frozen install would reject.
     cooldown:
       default-days: 7
+    ignore:
+      # @astrojs/check (language-server) crashes on TypeScript 7's tsconfig API
+      # (`astro check` → "Cannot read properties of undefined (reading
+      # 'fileExists')"). Hold typescript at 6.x until upstream supports TS7.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
     groups:
       astro:
         patterns: ["astro", "@astrojs/*"]
