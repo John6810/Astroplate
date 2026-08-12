@@ -17,7 +17,7 @@ overrides:
   "fast-uri@<3.1.5": "3.1.5" # host confusion via backslash authority delimiter
   "undici@>=7.0.0 <7.29.0": "7.29.0" # request smuggling / DoS
   "nanoid@<3.3.17": "3.3.17" # predictable output advisory (via astro)
-  "postcss@<8.5.18": "8.5.18" # parsing DoS (via tailwindcss / vite)
+  "postcss@<8.5.26": "8.5.26" # parsing DoS (via tailwindcss / vite)
   "sharp@<0.35.0": "0.35.3" # dedupe the stale transitive 0.34.5 onto our patched direct
 
 allowBuilds:
