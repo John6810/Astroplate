@@ -29,21 +29,33 @@ function parseFontString(fontStr) {
   return { name: cleanName, weights };
 }
 
-// Build fonts configuration from theme.json
+// Build fonts configuration from theme.json.
+// Fonts are SELF-HOSTED (woff2 in src/assets/fonts/) via the local provider,
+// so the build never fetches from fonts.gstatic.com — CI stays deterministic
+// and offline-safe. Each weight maps to a "<slug>-<weight>.woff2" file, e.g.
+// "Heebo:wght@400;600" → heebo-400.woff2 / heebo-600.woff2.
 const fontsConfig = Object.entries(theme.fonts.font_family)
   .filter(([key]) => !key.includes("_type")) // Filter out type entries
   .map(([key, fontStr]) => {
     const { name, weights } = parseFontString(fontStr);
     const typeKey = `${key}_type`;
     const fallback = theme.fonts.font_family[typeKey] || "sans-serif";
+    const slug = name.toLowerCase().replace(/\s+/g, "-");
 
     return {
+      provider: fontProviders.local(),
       name,
       cssVariable: `--font-${key}`,
-      provider: fontProviders.google(),
-      weights,
-      display: "swap",
       fallbacks: [fallback],
+      display: "swap",
+      // Local provider takes its per-weight files under `options.variants`.
+      options: {
+        variants: weights.map((weight) => ({
+          weight,
+          style: "normal",
+          src: [`./src/assets/fonts/${slug}-${weight}.woff2`],
+        })),
+      },
     };
   });
 
