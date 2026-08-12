@@ -34,7 +34,7 @@
     "disqus-react": "^1.1.7",
     "github-slugger": "^2.0.0",
     "gray-matter": "^4.0.3",
-    "marked": "^18.0.5",
+    "marked": "^18.0.9",
     "prop-types": "^15.8.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
