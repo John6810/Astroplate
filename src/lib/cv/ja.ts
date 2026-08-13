@@ -2,9 +2,9 @@ import type { Dict } from "./en";
 
 const dict: Dict = {
   meta_title:
-    "Jonathan Aerts — Senior Cloud Platform Architect | Azure Landing Zone | Belgium · Luxembourg",
+    "ジョナサン・アールツ（Jonathan Aerts）— シニアクラウドプラットフォームアーキテクト | Azure・Terraform | ベルギー／ルクセンブルク",
   meta_description:
-    "Senior Cloud Platform Architect、15年以上のIT経験。Azure Landing Zonesゼロから構築、Terraform/GitOps、エンタープライズガバナンス。Belgium · Luxembourg。",
+    "ジョナサン・アールツ（Jonathan Aerts）— 15年以上のIT経験を持つシニアクラウドプラットフォームアーキテクト。Azure Landing Zoneのゼロからの構築、Terraform／Terragrunt・GitOpsによる自動化、エンタープライズガバナンス。ベルギー・ルクセンブルク拠点。日本語学習中（JLPT N5取得、N2準備中）。",
 
   hero_role:
     "Senior Cloud Platform Architect · Azure Landing Zone · Terraform/GitOps",
