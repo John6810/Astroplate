@@ -17,3 +17,14 @@ export const localeMeta: Record<
   en: { label: "EN", flag: "/icons/flag-gb.svg", htmlLang: "en", path: "/en" },
   ja: { label: "JP", flag: "/icons/flag-jp.svg", htmlLang: "ja", path: "/ja" },
 };
+
+// hreflang alternates for the localized homepages. Every locale variant lists
+// the full set (Google requires the links to be reciprocal); x-default points
+// at the FR root, the site's primary language.
+export const homeAlternates = [
+  ...locales.map((l) => ({
+    hreflang: localeMeta[l].htmlLang,
+    href: localeMeta[l].path,
+  })),
+  { hreflang: "x-default", href: "/" },
+];

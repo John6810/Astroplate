@@ -29,11 +29,28 @@ export interface Props {
   noindex?: boolean;
   canonical?: string;
   lang?: string;
+  alternates?: { hreflang: string; href: string }[];
 }
 
 // destructure frontmatter
-const { title, meta_title, description, image, noindex, canonical, lang } =
-  Astro.props;
+const {
+  title,
+  meta_title,
+  description,
+  image,
+  noindex,
+  canonical,
+  lang,
+  alternates,
+} = Astro.props;
+
+// Every page gets a canonical URL (the `canonical` prop overrides it).
+// Paths are normalized without a trailing slash to match trailingSlash:"never";
+// the root keeps its bare origin + "/".
+const normalizedPath =
+  Astro.url.pathname === "/" ? "/" : Astro.url.pathname.replace(/\/+$/, "");
+const canonicalURL =
+  canonical ?? new URL(normalizedPath, config.site.base_url).href;
 ---
 
 <!doctype html>
@@ -82,8 +99,19 @@ const { title, meta_title, description, image, noindex, canonical, lang } =
       {plainify(meta_title ? meta_title : title ? title : config.site.title)}
     </title>
 
-    <!-- canonical url -->
-    {canonical && <link rel="canonical" href={canonical} item-prop="url" />}
+    <!-- canonical url (auto-derived for every page, overridable via prop) -->
+    <link rel="canonical" href={canonicalURL} item-prop="url" />
+
+    <!-- hreflang alternates (only pages with locale variants pass these) -->
+    {
+      alternates?.map((alt) => (
+        <link
+          rel="alternate"
+          hreflang={alt.hreflang}
+          href={new URL(alt.href, config.site.base_url).href}
+        />
+      ))
+    }
 
     <!-- noindex robots -->
     {noindex && <meta name="robots" content="noindex,nofollow" />}
@@ -117,10 +145,7 @@ const { title, meta_title, description, image, noindex, canonical, lang } =
       )}
     />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content={`${config.site.base_url}/${Astro.url.pathname.replace("/", "")}`}
-    />
+    <meta property="og:url" content={canonicalURL} />
 
     <!-- twitter-title -->
     <meta
