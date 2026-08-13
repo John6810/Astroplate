@@ -16,8 +16,8 @@
     "generate-json": "node scripts/jsonGenerator.js",
     "generate-llms": "node scripts/llmsGenerator.js",
     "remove-darkmode": "node scripts/removeDarkmode.js && pnpm format",
-    "deploy:cf-workers": "npm run build && wrangler deploy",
-    "preview:cf-workers": "npm run build && wrangler dev"
+    "deploy:cf-workers": "pnpm run build && wrangler deploy",
+    "preview:cf-workers": "pnpm run build && wrangler dev"
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",
