@@ -7,14 +7,14 @@ const dict: Dict = {
     "ジョナサン・アールツ（Jonathan Aerts）— 15年以上のIT経験を持つシニアクラウドプラットフォームアーキテクト。Azure Landing Zoneのゼロからの構築、Terraform／Terragrunt・GitOpsによる自動化、エンタープライズガバナンス。ベルギー・ルクセンブルク拠点。日本語学習中（JLPT N5取得、N2準備中）。",
 
   hero_role:
-    "Senior Cloud Platform Architect · Azure Landing Zone · Terraform/GitOps",
+    "シニアクラウドプラットフォームアーキテクト · Azure Landing Zone · Terraform/GitOps",
   hero_desc:
     "<strong>15年以上のIT経験</strong>と5年以上のAzureエンタープライズ環境を専門とするシニアクラウドプラットフォームアーキテクト。<strong>Azure Landing Zone</strong>のゼロからの設計・展開、ガバナンス、マルチリージョンネットワーキング、Terraform/Terragruntによる完全自動化を専門としています。",
-  hero_label_email: "Email :",
-  hero_label_from: "居住地 :",
-  hero_label_currently: "現職 :",
-  hero_label_languages: "言語 :",
-  hero_value_from: "Belgium · Luxembourg",
+  hero_label_email: "Email：",
+  hero_label_from: "居住地：",
+  hero_label_currently: "現職：",
+  hero_label_languages: "言語：",
+  hero_value_from: "ベルギー・ルクセンブルク",
   hero_value_currently: "POST Luxembourg",
 
   stat_years_label: "年のIT経験",

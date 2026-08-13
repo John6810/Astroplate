@@ -14,7 +14,7 @@ const dict: Dict = {
   hero_label_from: "De :",
   hero_label_currently: "Actuellement :",
   hero_label_languages: "Langues :",
-  hero_value_from: "Belgium · Luxembourg",
+  hero_value_from: "Belgique · Luxembourg",
   hero_value_currently: "POST Luxembourg",
 
   stat_years_label: "ans d'IT",
