@@ -5,6 +5,53 @@ import { dicts, type Locale } from "@/lib/cv";
 const { locale } = Astro.props as { locale: Locale };
 const d = dicts[locale];
 
+// Structured identity for search engines (entity SEO). One shared Person
+// @id across all three locale homepages so Google merges them into a single
+// entity; the katakana alternateName connects Japanese-script searches.
+// Rendered as application/ld+json — non-executable, exempt from the CSP
+// script-src hash guard.
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  inLanguage: locale === "ja" ? "ja" : locale,
+  mainEntity: {
+    "@type": "Person",
+    "@id": "https://jonathan-aerts.dev/#person",
+    name: "Jonathan Aerts",
+    alternateName: "ジョナサン・アールツ",
+    jobTitle: "Senior Cloud Platform Architect",
+    description: d.meta_description,
+    url: "https://jonathan-aerts.dev/",
+    image: "https://jonathan-aerts.dev/images/avatar.jpg",
+    email: "mailto:hi@jonathan-aerts.dev",
+    sameAs: [
+      "https://github.com/John6810",
+      "https://linkedin.com/in/jaerts085",
+    ],
+    worksFor: { "@type": "Organization", name: "POST Luxembourg" },
+    nationality: { "@type": "Country", name: "Belgium" },
+    workLocation: {
+      "@type": "Place",
+      address: { "@type": "PostalAddress", addressCountry: "LU" },
+    },
+    knowsLanguage: ["fr", "en", "ja"],
+    knowsAbout: [
+      "Microsoft Azure",
+      "Azure Landing Zone",
+      "Terraform",
+      "Terragrunt",
+      "Azure Virtual Desktop",
+      "Infrastructure as Code",
+      "GitOps",
+      "Platform Engineering",
+      "Cloud Governance",
+      "Azure Policy",
+      "Azure Networking",
+      "FinOps",
+    ],
+  },
+};
+
 const accent = "text-[#0078d4] dark:text-[#3ca0e7]";
 const card =
   "rounded-lg border border-border bg-body dark:border-darkmode-border dark:bg-darkmode-light";
@@ -243,6 +290,12 @@ const languages = [
   { flag: "/icons/flag-jp.svg", label: d.lang_jp },
 ];
 ---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(personJsonLd)}
+/>
 
 <section class="section-sm">
   <div class="container">

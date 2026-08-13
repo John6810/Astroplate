@@ -18,7 +18,39 @@ const posts = await getSinglePage(COLLECTION_FOLDER);
 const similarPosts = similarItems(post, posts);
 const { Content } = await render(post);
 const { title, description, author, categories, image, date, tags } = post.data;
+
+// Entity SEO: credit every article to the same Person @id as the homepage
+// profile, so the blog's Azure/Terraform content feeds the author entity.
+const postUrl = `${config.site.base_url}/${COLLECTION_FOLDER}/${post.id}`;
+const blogPostingJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description: description,
+  image: image ? `${config.site.base_url}${image}` : undefined,
+  datePublished: date ? new Date(date).toISOString() : undefined,
+  inLanguage: "en",
+  keywords: (tags ?? []).join(", "),
+  mainEntityOfPage: postUrl,
+  url: postUrl,
+  author: {
+    "@type": "Person",
+    "@id": "https://jonathan-aerts.dev/#person",
+    name: "Jonathan Aerts",
+    url: "https://jonathan-aerts.dev/",
+    sameAs: [
+      "https://github.com/John6810",
+      "https://linkedin.com/in/jaerts085",
+    ],
+  },
+};
 ---
+
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(blogPostingJsonLd)}
+/>
 
 <section class="section pt-7">
   <div class="container">
