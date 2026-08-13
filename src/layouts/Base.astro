@@ -13,7 +13,6 @@ import {
 import { Font } from "astro:assets";
 import { ClientRouter } from "astro:transitions";
 import Announcement from "./helpers/Announcement";
-import SearchModal from "./helpers/SearchModal";
 
 // font families - extract font names for Font component (filter out type keys)
 const fontEntries = Object.entries(theme.fonts.font_family).filter(
@@ -187,9 +186,17 @@ const canonicalURL =
         <GoogleTagmanagerNoscript id={config.google_tag_manager.gtm_id} />
       )
     }
-    <Announcement client:only="react" />
+    {
+      /* Dead-weight guard: with the announcement disabled, don't ship the
+         island at all (it drags react + marked onto every page). */
+      config.announcement.enable && <Announcement client:only="react" />
+    }
     <Header />
-    <SearchModal client:only="react" />
+    {
+      /* Search UI is loaded on demand (first click / Ctrl+K) by searchLoader
+         instead of hydrating the full modal + search index on every page. */
+      config.settings.search && <script src="./helpers/searchLoader.ts" />
+    }
     <main class="grow" id="main-content">
       <slot />
     </main>
