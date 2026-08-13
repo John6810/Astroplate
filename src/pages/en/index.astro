@@ -1,7 +1,7 @@
 ---
 import Base from "@/layouts/Base.astro";
 import Resume from "@/partials/Resume.astro";
-import { dicts } from "@/lib/cv";
+import { dicts, homeAlternates } from "@/lib/cv";
 
 const d = dicts.en;
 ---
@@ -11,6 +11,7 @@ const d = dicts.en;
   meta_title={d.meta_title}
   description={d.meta_description}
   lang="en"
+  alternates={homeAlternates}
 >
   <Resume locale="en" />
 </Base>
