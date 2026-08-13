@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /api/*
+Sitemap: https://jonathan-aerts.dev/sitemap-index.xml
