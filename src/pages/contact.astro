@@ -1,17 +1,42 @@
 ---
-import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import { getListPage } from "@/lib/contentParser.astro";
 import PageHeader from "@/partials/PageHeader.astro";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const contactIndex = await getListPage("contact", "-index");
-const { contact_form_action }: { contact_form_action: string } = config.params;
 const { title, description, meta_title, image } = contactIndex.data;
 
 const buildDrafts = process.argv.includes("--buildDrafts");
 if (!buildDrafts && contactIndex.data.draft) {
   return Astro.redirect("/404");
 }
+
+// Direct contact channels — the template's <form action="#"> posted nowhere,
+// so it was replaced with links that actually reach me.
+const channels = [
+  {
+    icon: FaEnvelope,
+    label: "Email",
+    value: "hi@jonathan-aerts.dev",
+    href: "mailto:hi@jonathan-aerts.dev",
+    hint: "Best for anything work-related — I usually reply within a day.",
+  },
+  {
+    icon: FaLinkedin,
+    label: "LinkedIn",
+    value: "linkedin.com/in/jaerts085",
+    href: "https://linkedin.com/in/jaerts085",
+    hint: "Connect or send a message.",
+  },
+  {
+    icon: FaGithub,
+    label: "GitHub",
+    value: "github.com/John6810",
+    href: "https://github.com/John6810",
+    hint: "Code, modules and this site's source.",
+  },
+];
 ---
 
 <Base
@@ -23,49 +48,35 @@ if (!buildDrafts && contactIndex.data.draft) {
   <PageHeader title={title} />
   <section class="section-sm">
     <div class="container">
-      <div class="row">
-        <div class="mx-auto md:col-10 lg:col-6">
-          <form action={contact_form_action} method="POST">
-            <div class="mb-6">
-              <label for="name" class="form-label">
-                Full Name <span class="text-red-500">*</span>
-              </label>
-              <input
-                id="name"
-                name="name"
-                class="form-input"
-                placeholder="John Doe"
-                type="text"
-                required
-              />
-            </div>
-            <div class="mb-6">
-              <label for="email" class="form-label">
-                Working Mail <span class="text-red-500">*</span>
-              </label>
-              <input
-                id="email"
-                name="email"
-                class="form-input"
-                placeholder="john.doe@email.com"
-                type="email"
-                required
-              />
-            </div>
-            <div class="mb-6">
-              <label for="message" class="form-label">
-                Anything else? <span class="text-red-500">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                class="form-input"
-                placeholder="Message goes here..."
-                required
-                rows="8"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-7">
+          <div class="flex flex-col gap-4">
+            {
+              channels.map((c) => (
+                <a
+                  href={c.href}
+                  target={c.href.startsWith("http") ? "_blank" : undefined}
+                  rel={c.href.startsWith("http") ? "noopener" : undefined}
+                  class="group flex items-center gap-5 rounded-lg border border-border bg-light p-6 transition hover:border-primary dark:border-darkmode-border dark:bg-darkmode-light dark:hover:border-darkmode-primary"
+                >
+                  <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary text-xl text-white dark:bg-darkmode-primary dark:text-text-dark">
+                    <c.icon />
+                  </span>
+                  <span>
+                    <span class="block font-secondary text-lg font-semibold text-text-dark dark:text-darkmode-text-dark">
+                      {c.label}
+                      <span class="ml-2 font-primary text-base font-normal text-text group-hover:underline dark:text-darkmode-text">
+                        {c.value}
+                      </span>
+                    </span>
+                    <span class="block text-sm text-text-light dark:text-darkmode-text-light">
+                      {c.hint}
+                    </span>
+                  </span>
+                </a>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
