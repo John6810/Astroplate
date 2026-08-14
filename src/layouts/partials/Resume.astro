@@ -476,12 +476,26 @@ const languages = [
         <!-- EXPÉRIENCE -->
         <div id="experience" class={`${card} p-6 md:p-8`}>
           <h2 class="text-h3-sm md:text-h3">{d.section_experience}</h2>
-          <div class="mt-8 flex flex-col gap-8">
+          {
+            /* Timeline of <details> accordions — the current job is open by
+              default, older ones collapse to a single header row. Pure CSS,
+              no JS: keeps the page at zero islands. */
+          }
+          <div
+            class="relative mt-8 flex flex-col gap-3 before:absolute before:bottom-3 before:left-[7px] before:top-3 before:w-px before:bg-border dark:before:bg-darkmode-border"
+          >
             {
-              experiences.map((job) => (
-                <article class="border-l-2 border-border pl-5 dark:border-darkmode-border">
-                  <div class="flex flex-wrap items-center justify-between gap-2">
-                    <h3 class="flex items-center gap-2 text-h4">
+              experiences.map((job, i) => (
+                <details class="group relative pl-8" open={i === 0}>
+                  <span
+                    class={`absolute left-0 top-[0.6rem] h-[15px] w-[15px] rounded-full border-2 border-body dark:border-darkmode-light ${
+                      i === 0
+                        ? "bg-[#0078d4] dark:bg-[#3ca0e7]"
+                        : "bg-border dark:bg-darkmode-border"
+                    }`}
+                  />
+                  <summary class="-mx-2 flex cursor-pointer list-none flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-md px-2 py-1 transition-colors hover:bg-light dark:hover:bg-darkmode-light [&::-webkit-details-marker]:hidden">
+                    <span class="flex min-w-0 items-center gap-2">
                       {job.logo && (
                         <img
                           src={job.logo}
@@ -491,44 +505,60 @@ const languages = [
                           loading="lazy"
                         />
                       )}
-                      <span>{job.title}</span>
-                    </h3>
-                    <span class="font-secondary text-xs font-bold uppercase tracking-wide text-text-light">
-                      {job.date}
+                      <h3 class="text-h5 md:text-h4">{job.title}</h3>
                     </span>
-                  </div>
-                  <p class={`mt-1 font-semibold ${accent}`}>
-                    {job.company}{" "}
-                    <span class="font-normal text-text-light">
-                      · {job.meta}
+                    <span class="flex items-center gap-3">
+                      <span class="font-secondary text-xs font-bold uppercase tracking-wide text-text-light">
+                        {job.date}
+                      </span>
+                      <svg
+                        class="h-4 w-4 shrink-0 text-text-light transition-transform duration-200 group-open:rotate-180"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="m6 9 6 6 6-6" />
+                      </svg>
                     </span>
-                  </p>
-                  <p class="mt-2 text-sm leading-relaxed text-text-light">
-                    {job.context}
-                  </p>
-                  <ul class="mt-3 flex flex-col gap-2">
-                    {job.bullets.map((b) => (
-                      <li class="relative pl-5 text-sm leading-relaxed">
-                        <span class="absolute left-0 top-[0.45em] h-1.5 w-1.5 rounded-full bg-[#0078d4]" />
-                        <span set:html={b} />
-                      </li>
-                    ))}
-                  </ul>
-                  {job.links && (
-                    <div class="mt-3 flex flex-col gap-1">
-                      {job.links.map((l) => (
-                        <a
-                          href={l.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          class={`text-[13px] font-medium ${accent} hover:underline`}
-                        >
-                          {l.label}
-                        </a>
+                    <span class={`w-full font-semibold ${accent}`}>
+                      {job.company}{" "}
+                      <span class="font-normal text-text-light">
+                        · {job.meta}
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="job-body">
+                    <p class="mt-2 text-sm leading-relaxed text-text-light">
+                      {job.context}
+                    </p>
+                    <ul class="mt-3 flex flex-col gap-2">
+                      {job.bullets.map((b) => (
+                        <li class="relative pl-5 text-sm leading-relaxed">
+                          <span class="absolute left-0 top-[0.45em] h-1.5 w-1.5 rounded-full bg-[#0078d4]" />
+                          <span set:html={b} />
+                        </li>
                       ))}
-                    </div>
-                  )}
-                </article>
+                    </ul>
+                    {job.links && (
+                      <div class="mt-3 flex flex-col gap-1">
+                        {job.links.map((l) => (
+                          <a
+                            href={l.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class={`text-[13px] font-medium ${accent} hover:underline`}
+                          >
+                            {l.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </details>
               ))
             }
           </div>
@@ -727,3 +757,16 @@ const languages = [
     </div>
   </div>
 </section>
+
+<style>
+  /* Soft reveal when a job accordion opens (close stays instant — native). */
+  details[open] .job-body {
+    animation: job-reveal 0.25s ease;
+  }
+  @keyframes job-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+</style>
