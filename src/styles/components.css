@@ -173,5 +173,5 @@
    excluded so Shiki keeps full control of their colors (incl. plain-text
    blocks, which would otherwise get an unreadable dark-on-dark foreground). */
 .content :not(pre) > code {
-  @apply rounded bg-light px-1.5 py-0.5 text-[0.9em] font-medium text-text-dark dark:bg-darkmode-light dark:text-darkmode-text-dark;
+  @apply rounded bg-light px-1.5 py-0.5 align-middle text-[0.9em] font-medium text-text-dark dark:bg-darkmode-light dark:text-darkmode-text-dark;
 }
