@@ -16,6 +16,7 @@ const dict: Dict = {
   hero_label_languages: "Langues :",
   hero_value_from: "Belgique · Luxembourg",
   hero_value_currently: "POST Luxembourg",
+  hero_download_pdf: "Télécharger le CV (PDF)",
 
   stat_years_label: "ans d'IT",
   stat_azure_label: "ans sur Azure",

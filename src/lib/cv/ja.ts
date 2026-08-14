@@ -16,6 +16,7 @@ const dict: Dict = {
   hero_label_languages: "言語：",
   hero_value_from: "ベルギー・ルクセンブルク",
   hero_value_currently: "POST Luxembourg",
+  hero_download_pdf: "履歴書をダウンロード（PDF）",
 
   stat_years_label: "年のIT経験",
   stat_azure_label: "年のAzure経験",

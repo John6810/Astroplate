@@ -65,7 +65,11 @@ export default defineConfig({
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
   image: { service: sharp() },
-  vite: { plugins: [tailwindcss()] },
+  // assetsInlineLimit: 0 keeps every bundled script an EXTERNAL file — the CSP
+  // pins script hashes and forbids unsafe-inline, so a small script that Vite
+  // decides to inline would be silently blocked in production (the check-csp
+  // guard catches it in CI, this setting prevents it structurally).
+  vite: { plugins: [tailwindcss()], build: { assetsInlineLimit: 0 } },
   fonts: fontsConfig,
   integrations: [
     react(),
