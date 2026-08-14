@@ -174,7 +174,7 @@ const dict: Dict = {
     "Haute École de la Province de Liège、ベルギー · 2003 – 2007",
 
   contact_desc:
-    "希望職種：Senior / Principal Cloud Architect、Cloud Solution Architect、または Customer Success Engineer — ハイパースケーラー（Microsoft、AWS、HashiCorp）、テックスケールアップ、または規制下のエンタープライズ環境にて。",
+    "希望職種：Senior / Principal Cloud Architect、Cloud Solution Architect、または Customer Success Engineer — ハイパースケーラー、テックスケールアップ、または規制下のエンタープライズ環境にて。",
   contact_cta_blog: "📝 ブログを読む",
 };
 
