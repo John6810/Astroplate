@@ -148,7 +148,7 @@ const dict: Dict = {
   level_avance: "上級",
   lang_fr: "フランス語 — 母国語",
   lang_en: "英語 — C1 流暢",
-  lang_jp: "日本語 — JLPT N5取得 · N2準備中",
+  lang_jp: "日本語 — JLPT N2準備中 · N5取得",
   learning_aws: "AWS Landing Zone · Control Tower · SCPs",
 
   proj1_title: "Terraform Azure モジュールライブラリ",

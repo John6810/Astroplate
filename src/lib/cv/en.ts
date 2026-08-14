@@ -150,7 +150,7 @@ const dict = {
   level_avance: "ADVANCED",
   lang_fr: "French — Native",
   lang_en: "English — C1 fluent",
-  lang_jp: "日本語 — JLPT N5 certified · N2 in progress",
+  lang_jp: "日本語 — JLPT N2 in preparation · N5 certified",
   learning_aws: "AWS Landing Zone · Control Tower · SCPs",
 
   proj1_title: "Terraform Azure Module Library",

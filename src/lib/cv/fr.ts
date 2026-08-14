@@ -148,7 +148,7 @@ const dict: Dict = {
   level_avance: "AVANCÉ",
   lang_fr: "Français — Natif",
   lang_en: "Anglais — C1 courant",
-  lang_jp: "日本語 — JLPT N5 certifié · N2 en préparation",
+  lang_jp: "日本語 — JLPT N2 en préparation · N5 certifié",
   learning_aws: "AWS Landing Zone · Control Tower · SCPs",
 
   proj1_title: "Terraform Azure Module Library",
