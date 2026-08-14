@@ -173,5 +173,12 @@
    excluded so Shiki keeps full control of their colors (incl. plain-text
    blocks, which would otherwise get an unreadable dark-on-dark foreground). */
 .content :not(pre) > code {
-  @apply rounded bg-light px-1.5 py-0.5 align-middle text-[0.9em] font-medium text-text-dark dark:bg-darkmode-light dark:text-darkmode-text-dark;
+  @apply rounded border border-border bg-light px-1.5 py-px align-middle text-[0.9em] font-medium text-text-dark dark:border-darkmode-border dark:bg-darkmode-light dark:text-darkmode-text-dark;
+}
+
+/* Blockquotes (TL;DR) share the chip's bg-light background — without this the
+   chip is grey-on-grey and only its padding shows, reading as broken spacing.
+   Invert to the body background so the chip stays a visible chip. */
+.content blockquote :not(pre) > code {
+  @apply bg-body dark:bg-darkmode-body;
 }
