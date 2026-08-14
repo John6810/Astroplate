@@ -148,7 +148,7 @@ const dict: Dict = {
   level_avance: "AVANCÉ",
   lang_fr: "Français — Natif",
   lang_en: "Anglais — C1 courant",
-  lang_jp: "日本語 — JLPT N5 certifié · N2 en préparation",
+  lang_jp: "日本語 — JLPT N2 en préparation · N5 certifié",
   learning_aws: "AWS Landing Zone · Control Tower · SCPs",
 
   proj1_title: "Terraform Azure Module Library",
@@ -174,7 +174,7 @@ const dict: Dict = {
     "Haute École de la Province de Liège, Belgique · 2003 – 2007",
 
   contact_desc:
-    "Rôles cibles : Senior / Principal Cloud Architect, Cloud Solution Architect, ou Customer Success Engineer — chez un hyperscaler (Microsoft, AWS, HashiCorp), une scale-up tech ou un environnement enterprise sous régulation.",
+    "Rôles cibles : Senior / Principal Cloud Architect, Cloud Solution Architect, ou Customer Success Engineer — hyperscaler, scale-up tech ou un environnement enterprise sous régulation.",
   contact_cta_blog: "📝 Lire le blog",
 };
 
