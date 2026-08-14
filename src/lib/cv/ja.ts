@@ -19,7 +19,7 @@ const dict: Dict = {
   hero_download_pdf: "履歴書をダウンロード（PDF）",
 
   stat_years_label: "年のIT経験",
-  stat_azure_label: "年のAzure経験",
+  stat_budget_label: "運用クラウド予算",
   stat_alz_label: "Landing Zones（ゼロから構築）",
   stat_subscriptions_label: "管理対象 Azure サブスクリプション",
   stat_modules_label: "プロダクションレディTerraformモジュール",
@@ -35,7 +35,7 @@ const dict: Dict = {
   job1_meta: "ルクセンブルク",
   job1_date: "2024年8月 — 現在",
   job1_context:
-    "POST Luxembourg（ルクセンブルクの通信事業者および郵便銀行、CSSF監督下）のクラウド基盤をゼロから構築するために採用。ミッション：銀行業務の重要ワークロードを、コンプライアンス準拠のCloud Outsourcingの枠組みでAzureに収容する。前任なし。{post_duration}の継続的デリバリー。",
+    "POST Luxembourg（ルクセンブルクの通信事業者および郵便銀行、CSSF監督下）のクラウド基盤をゼロから構築するために採用。ミッション：銀行業務の重要ワークロードを、コンプライアンス準拠のCloud Outsourcingの枠組みでAzureに収容する。前任なし。{post_duration}の継続的デリバリー。約200万ユーロのクラウド予算を運用。",
   job1_b1:
     "<strong>Enterprise-Scale Azure Landing Zoneを設計・展開</strong> — <strong>26サブスクリプション</strong>、マルチリージョン、Microsoft CAFおよびAzure Verified Modules準拠、銀行規制下のワークロードを収容可能な基盤。",
   job1_b2:

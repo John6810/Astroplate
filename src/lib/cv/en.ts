@@ -21,7 +21,7 @@ const dict = {
   hero_download_pdf: "Download CV (PDF)",
 
   stat_years_label: "years in IT",
-  stat_azure_label: "years on Azure",
+  stat_budget_label: "cloud budget managed",
   stat_alz_label: "Landing Zones from scratch",
   stat_subscriptions_label: "Azure subscriptions governed",
   stat_modules_label: "production-ready Terraform modules",
@@ -37,7 +37,7 @@ const dict = {
   job1_meta: "Luxembourg",
   job1_date: "Aug 2024 — Present",
   job1_context:
-    "Hired to build POST Luxembourg's cloud foundation — Grand Duchy telecom operator and postal bank, supervised by the CSSF. Mission: host the critical banking workloads on Azure under a compliant Cloud Outsourcing framework. No prior cloud footprint. {post_duration} of continuous delivery.",
+    "Hired to build POST Luxembourg's cloud foundation — Grand Duchy telecom operator and postal bank, supervised by the CSSF. Mission: host the critical banking workloads on Azure under a compliant Cloud Outsourcing framework. No prior cloud footprint. {post_duration} of continuous delivery, managing a €2M cloud budget.",
   job1_b1:
     "<strong>Designed and delivered an Enterprise-Scale Azure Landing Zone</strong> across <strong>26 subscriptions</strong>, multi-region, aligned with Microsoft CAF and Azure Verified Modules — foundation eligible to host workloads under banking regulation.",
   job1_b2:
