@@ -182,3 +182,11 @@
 .content blockquote :not(pre) > code {
   @apply bg-body dark:bg-darkmode-body;
 }
+
+/* The typography plugin decorates inline code with literal backtick
+   pseudo-elements (code::before/::after { content: "`" }). Our chips make
+   them redundant — and they read as stray characters glued to the code. */
+.content :not(pre) > code::before,
+.content :not(pre) > code::after {
+  content: none;
+}
