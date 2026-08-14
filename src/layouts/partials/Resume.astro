@@ -1,6 +1,6 @@
 ---
 import LanguageSwitcher from "@/components/LanguageSwitcher.astro";
-import { dicts, type Locale } from "@/lib/cv";
+import { dicts, IT_YEARS, type Locale } from "@/lib/cv";
 
 const { locale } = Astro.props as { locale: Locale };
 const d = dicts[locale];
@@ -58,13 +58,16 @@ const card =
 const eyebrow =
   "font-secondary text-xs font-bold uppercase tracking-[0.12em] text-text-light";
 
-// Language-neutral numbers; labels come from the dictionary.
+// Language-neutral numbers; labels come from the dictionary. IT_YEARS is
+// computed at build time (see lib/cv) so it can't go stale; the module count
+// is the verified tally of the real library (79 as of 2026-08), floored to a
+// stable bucket.
 const stats = [
-  { num: "15+", label: d.stat_years_label },
+  { num: `${IT_YEARS}+`, label: d.stat_years_label },
   { num: "5+", label: d.stat_azure_label },
   { num: "4", label: d.stat_alz_label },
   { num: "26", label: d.stat_subscriptions_label },
-  { num: "500K€+", label: d.stat_budget_label },
+  { num: "75+", label: d.stat_modules_label },
   { num: "35+", label: d.stat_trained_label },
 ];
 

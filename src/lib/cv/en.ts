@@ -6,12 +6,12 @@ const dict = {
   meta_title:
     "Jonathan Aerts — Senior Cloud Platform Architect | Azure Landing Zone | Belgium · Luxembourg",
   meta_description:
-    "Senior Cloud Platform Architect, 15+ years IT. Azure Landing Zones from scratch, Terraform/GitOps, enterprise governance. Belgium · Luxembourg.",
+    "Senior Cloud Platform Architect, {it_years}+ years IT. Azure Landing Zones from scratch, Terraform/GitOps, enterprise governance. Belgium · Luxembourg.",
 
   hero_role:
     "Senior Cloud Platform Architect · Azure Landing Zone · Terraform/GitOps",
   hero_desc:
-    "Senior Cloud Platform Architect with <strong>15+ years of IT experience</strong> and 5+ years focused on enterprise Azure environments. Specialised in designing and deploying <strong>Azure Landing Zones</strong> end-to-end — governance, multi-region networking, and full automation via Terraform/Terragrunt.",
+    "Senior Cloud Platform Architect with <strong>{it_years}+ years of IT experience</strong> and 5+ years focused on enterprise Azure environments. Specialised in designing and deploying <strong>Azure Landing Zones</strong> end-to-end — governance, multi-region networking, and full automation via Terraform/Terragrunt.",
   hero_label_email: "Email:",
   hero_label_from: "From:",
   hero_label_currently: "Currently:",
@@ -23,7 +23,7 @@ const dict = {
   stat_azure_label: "years on Azure",
   stat_alz_label: "Landing Zones from scratch",
   stat_subscriptions_label: "Azure subscriptions governed",
-  stat_budget_label: "budget managed",
+  stat_modules_label: "production-ready Terraform modules",
   stat_trained_label: "engineers trained",
 
   section_experience: "Professional experience",
@@ -36,13 +36,13 @@ const dict = {
   job1_meta: "Luxembourg",
   job1_date: "Aug 2024 — Present",
   job1_context:
-    "Hired to single-handedly build POST Luxembourg's cloud foundation — Grand Duchy telecom operator and postal bank, supervised by the CSSF. Mission: host the critical banking workloads on Azure under a compliant Cloud Outsourcing framework. No prior cloud footprint. 13 months of continuous delivery.",
+    "Hired to build POST Luxembourg's cloud foundation — Grand Duchy telecom operator and postal bank, supervised by the CSSF. Mission: host the critical banking workloads on Azure under a compliant Cloud Outsourcing framework. No prior cloud footprint. {post_duration} of continuous delivery.",
   job1_b1:
     "<strong>Designed and delivered an Enterprise-Scale Azure Landing Zone</strong> across <strong>26 subscriptions</strong>, multi-region, aligned with Microsoft CAF and Azure Verified Modules — foundation eligible to host workloads under banking regulation.",
   job1_b2:
     "<strong>Aligned the platform with regulatory requirements</strong>: controls derived from <strong>CSSF Circular 22/806</strong> (Cloud Outsourcing), <strong>DORA</strong>, <strong>NIS2</strong> and <strong>ISO 27001</strong>, <strong>CIS Microsoft Azure</strong> baselines, <strong>zero persistent secrets</strong> (OIDC / Workload Identity end-to-end), Private Endpoints across all PaaS, customer-managed encryption everywhere.",
   job1_b3:
-    "<strong>Industrialised Infrastructure as Code</strong>: <strong>60+ production-ready Terraform modules</strong>, single Terragrunt pipeline across the whole perimeter, automated drift detection — immutability and full audit-ready traceability.",
+    "<strong>Industrialised Infrastructure as Code</strong>: <strong>75+ production-ready Terraform modules</strong>, single Terragrunt pipeline across the whole perimeter, automated drift detection — immutability and full audit-ready traceability.",
   job1_b4:
     "<strong>Built the application platform</strong>: private AKS clusters in GitOps (Argo CD), <strong>Azure Virtual Desktop</strong> (Host Pools, FSLogix ZRS, Private Endpoints), enterprise-grade observability (managed Prometheus + Grafana, 20+ dashboards), AMBA alerts aligned with Microsoft production guidance.",
   job1_b5:

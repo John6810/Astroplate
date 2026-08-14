@@ -4,12 +4,12 @@ const dict: Dict = {
   meta_title:
     "ジョナサン・アールツ（Jonathan Aerts）— シニアクラウドプラットフォームアーキテクト | Azure・Terraform | ベルギー／ルクセンブルク",
   meta_description:
-    "ジョナサン・アールツ（Jonathan Aerts）— 15年以上のIT経験を持つシニアクラウドプラットフォームアーキテクト。Azure Landing Zoneのゼロからの構築、Terraform／Terragrunt・GitOpsによる自動化、エンタープライズガバナンス。ベルギー・ルクセンブルク拠点。日本語学習中（JLPT N5取得、N2準備中）。",
+    "ジョナサン・アールツ（Jonathan Aerts）— {it_years}年以上のIT経験を持つシニアクラウドプラットフォームアーキテクト。Azure Landing Zoneのゼロからの構築、Terraform／Terragrunt・GitOpsによる自動化、エンタープライズガバナンス。ベルギー・ルクセンブルク拠点。日本語学習中（JLPT N5取得、N2準備中）。",
 
   hero_role:
     "シニアクラウドプラットフォームアーキテクト · Azure Landing Zone · Terraform/GitOps",
   hero_desc:
-    "<strong>15年以上のIT経験</strong>と5年以上のAzureエンタープライズ環境を専門とするシニアクラウドプラットフォームアーキテクト。<strong>Azure Landing Zone</strong>のゼロからの設計・展開、ガバナンス、マルチリージョンネットワーキング、Terraform/Terragruntによる完全自動化を専門としています。",
+    "<strong>{it_years}年以上のIT経験</strong>と5年以上のAzureエンタープライズ環境を専門とするシニアクラウドプラットフォームアーキテクト。<strong>Azure Landing Zone</strong>のゼロからの設計・展開、ガバナンス、マルチリージョンネットワーキング、Terraform/Terragruntによる完全自動化を専門としています。",
   hero_label_email: "Email：",
   hero_label_from: "居住地：",
   hero_label_currently: "現職：",
@@ -21,7 +21,7 @@ const dict: Dict = {
   stat_azure_label: "年のAzure経験",
   stat_alz_label: "Landing Zones（ゼロから構築）",
   stat_subscriptions_label: "管理対象 Azure サブスクリプション",
-  stat_budget_label: "管理予算",
+  stat_modules_label: "プロダクションレディTerraformモジュール",
   stat_trained_label: "名のエンジニア育成",
 
   section_experience: "職務経歴",
@@ -34,13 +34,13 @@ const dict: Dict = {
   job1_meta: "ルクセンブルク",
   job1_date: "2024年8月 — 現在",
   job1_context:
-    "POST Luxembourg（ルクセンブルクの通信事業者および郵便銀行、CSSF監督下）のクラウド基盤をゼロから単独で構築するために採用。ミッション：銀行業務の重要ワークロードを、コンプライアンス準拠のCloud Outsourcingの枠組みでAzureに収容する。前任なし。13ヶ月間の継続的デリバリー。",
+    "POST Luxembourg（ルクセンブルクの通信事業者および郵便銀行、CSSF監督下）のクラウド基盤をゼロから構築するために採用。ミッション：銀行業務の重要ワークロードを、コンプライアンス準拠のCloud Outsourcingの枠組みでAzureに収容する。前任なし。{post_duration}の継続的デリバリー。",
   job1_b1:
     "<strong>Enterprise-Scale Azure Landing Zoneを設計・展開</strong> — <strong>26サブスクリプション</strong>、マルチリージョン、Microsoft CAFおよびAzure Verified Modules準拠、銀行規制下のワークロードを収容可能な基盤。",
   job1_b2:
     "<strong>規制要件にプラットフォームを整合</strong>：<strong>CSSF Circular 22/806</strong>（Cloud Outsourcing）、<strong>DORA</strong>、<strong>NIS2</strong>、<strong>ISO 27001</strong>由来の統制、<strong>CIS Microsoft Azure</strong>ベースライン、<strong>永続的シークレットゼロ</strong>(OIDC / Workload Identity エンドツーエンド)、全PaaSへのPrivate Endpoints、顧客管理鍵暗号化を全面採用。",
   job1_b3:
-    "<strong>IaCを工業化</strong>：<strong>60以上のプロダクションレディTerraformモジュール</strong>、全領域共通のTerragruntパイプライン、自動ドリフト検出 — イミュータビリティと監査対応のトレーサビリティを確保。",
+    "<strong>IaCを工業化</strong>：<strong>75以上のプロダクションレディTerraformモジュール</strong>、全領域共通のTerragruntパイプライン、自動ドリフト検出 — イミュータビリティと監査対応のトレーサビリティを確保。",
   job1_b4:
     "<strong>アプリケーション基盤を構築</strong>：GitOps（Argo CD）によるプライベートAKSクラスター、<strong>Azure Virtual Desktop</strong>（Host Pools、FSLogix ZRS、Private Endpoints）による準拠仮想デスクトップ、エンタープライズ級の可観測性（マネージドPrometheus + Grafana、20以上のダッシュボード）、Microsoftプロダクション推奨に準拠したAMBAアラート。",
   job1_b5:
