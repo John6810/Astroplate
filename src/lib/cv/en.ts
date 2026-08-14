@@ -18,6 +18,7 @@ const dict = {
   hero_label_languages: "Languages:",
   hero_value_from: "Belgium · Luxembourg",
   hero_value_currently: "POST Luxembourg",
+  hero_download_pdf: "Download CV (PDF)",
 
   stat_years_label: "years in IT",
   stat_azure_label: "years on Azure",
