@@ -37,19 +37,19 @@ const dict: Dict = {
   job1_context:
     "POST Luxembourg（ルクセンブルクの通信事業者および郵便銀行、CSSF監督下）のクラウド基盤をゼロから構築するために採用。ミッション：銀行業務の重要ワークロードを、コンプライアンス準拠のCloud Outsourcingの枠組みでAzureに収容する。前任なし。{post_duration}の継続的デリバリー。約200万ユーロのクラウド予算を運用。",
   job1_b1:
-    "<strong>Enterprise-Scale Azure Landing Zoneを設計・展開</strong> — <strong>26サブスクリプション</strong>、マルチリージョン、Microsoft CAFおよびAzure Verified Modules準拠、銀行規制下のワークロードを収容可能な基盤。",
+    "<strong>Enterprise-Scale Azure Landing Zoneを設計・展開</strong> — <strong>26サブスクリプション</strong>、マルチリージョン、Microsoft CAFおよびAzure Verified Modules準拠 — さらに<strong>複製により工業化を実証</strong>：テンプレートから2つ目のランディングゾーンを展開、<strong>差分はパラメータ6つのみ</strong>。",
   job1_b2:
     "<strong>規制要件にプラットフォームを整合</strong>：<strong>CSSF Circular 22/806</strong>（Cloud Outsourcing）、<strong>DORA</strong>、<strong>NIS2</strong>、<strong>ISO 27001</strong>由来の統制、<strong>CIS Microsoft Azure</strong>ベースライン、<strong>永続的シークレットゼロ</strong>(OIDC / Workload Identity エンドツーエンド)、全PaaSへのPrivate Endpoints、顧客管理鍵暗号化を全面採用。",
   job1_b3:
-    "<strong>IaCを工業化</strong>：<strong>75以上のプロダクションレディTerraformモジュール</strong>、全領域共通のTerragruntパイプライン、自動ドリフト検出 — イミュータビリティと監査対応のトレーサビリティを確保。",
+    "<strong>IaCをプロダクトとして運営</strong>：<strong>75以上のプロダクションレディTerraformモジュール</strong> — モジュール別CI、Renovate、セキュリティスキャン、Azureサービス廃止ウォッチ — 単一Terragruntパイプライン、<strong>専門AIエージェント</strong>による生成・レビュー支援。",
   job1_b4:
-    "<strong>アプリケーション基盤を構築</strong>：GitOps（Argo CD）によるプライベートAKSクラスター、<strong>Azure Virtual Desktop</strong>（Host Pools、FSLogix ZRS、Private Endpoints）による準拠仮想デスクトップ、エンタープライズ級の可観測性（マネージドPrometheus + Grafana、20以上のダッシュボード）、Microsoftプロダクション推奨に準拠したAMBAアラート。",
+    "<strong>マルチテナントGitOpsプラットフォームを構築</strong>（プライベートAKS、Argo CD）：AppProjectによる分離、OPS/DEV分割、チームオンボーディングの自動化 — kubectlゼロ、シークレットゼロ。<strong>POST社内5チーム（開発者約20名）をオンボード</strong>、ワークロードは本番稼働中。",
   job1_b5:
-    "<strong>内部ガバナンスを文書化</strong>：<strong>20件のADR</strong>、6件のSREランブック、1万行のエンタープライズWiki、命名 / タギング / RBAC の厳格な規約 — 監査と将来のチーム受入れのための基盤。",
+    "<strong>Azure Virtual Desktopを本番サービス化</strong>（Host Pools、FSLogix ZRS、Private Endpoints、ゴールデンイメージ）およびエンタープライズ可観測性：マネージドPrometheus + Grafana、<strong>20以上のダッシュボード</strong>、Microsoft本番推奨準拠のAMBAアラート。",
   job1_b6:
-    "<strong>マルチクラウド戦略を設計中</strong>：<strong>DORA</strong>が要求するレジリエンスとサプライヤー多様化に対応するため、AWS マルチアカウント Landing Zone（Control Tower、SCPs、IaC）を設計中。",
+    "<strong>内部ガバナンスを文書化</strong>：<strong>20件のADR</strong>、6件のSREランブック、1万行のエンタープライズWiki、命名 / タギング / RBAC の厳格な規約 — 監査と将来のチーム受入れのための基盤。",
   job1_b7:
-    "<strong>プロジェクトに専門化AIエージェント群を導入</strong> — 規約とハマりどころのコード化、モジュール生成支援、アーキテクチャレビューの加速化。",
+    "<strong>マルチクラウド戦略を設計中</strong>：<strong>DORA</strong>が要求するレジリエンスとサプライヤー多様化に対応するため、AWS マルチアカウント Landing Zone（Control Tower、SCPs、IaC）を設計中。",
   job1_link_github:
     "📦 terraform-azurerm-modules — 自作モジュール（オープンソース） →",
 
