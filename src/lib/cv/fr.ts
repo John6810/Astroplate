@@ -37,7 +37,7 @@ const dict: Dict = {
   job1_context:
     "Recruté pour bâtir la fondation cloud de POST Luxembourg — opérateur télécom et banque postale du Grand-Duché, supervisé par la CSSF. Mission : héberger les workloads bancaires critiques sur Azure dans un cadre Cloud Outsourcing conforme. Aucun existant à l'arrivée. {post_duration} de delivery continue, avec pilotage d'un budget cloud de 2M€.",
   job1_b1:
-    "<strong>Conçu et livré une Azure Landing Zone Enterprise-Scale</strong> sur <strong>26 souscriptions</strong> multi-région, alignée Microsoft CAF et Azure Verified Modules — puis <strong>prouvé son industrialisation en la répliquant</strong> : une 2ᵉ landing zone déployée depuis le gabarit, <strong>six paramètres de différence</strong>.",
+    "<strong>Conçu et livré une Azure Landing Zone Enterprise-Scale</strong> sur <strong>26 souscriptions</strong> multi-région, alignée Microsoft CAF et Azure Verified Modules — puis <strong>répliquée en une 2ᵉ landing zone quasi à l'identique</strong> : seuls six paramètres changent (souscription, adressage, nommage, identité de pipeline).",
   job1_b2:
     "<strong>Aligné la plateforme sur les exigences réglementaires</strong> : contrôles dérivés <strong>CSSF Circular 22/806</strong> (Cloud Outsourcing), <strong>DORA</strong>, <strong>NIS2</strong> et <strong>ISO 27001</strong>, baselines <strong>CIS Microsoft Azure</strong>, <strong>zéro secret persistant</strong> (OIDC / Workload Identity end-to-end), Private Endpoints sur tous les PaaS, chiffrement client-managed généralisé.",
   job1_b3:
