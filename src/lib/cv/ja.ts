@@ -37,7 +37,7 @@ const dict: Dict = {
   job1_context:
     "POST Luxembourg（ルクセンブルクの通信事業者および郵便銀行、CSSF監督下）のクラウド基盤をゼロから構築するために採用。ミッション：銀行業務の重要ワークロードを、コンプライアンス準拠のCloud Outsourcingの枠組みでAzureに収容する。前任なし。{post_duration}の継続的デリバリー。約200万ユーロのクラウド予算を運用。",
   job1_b1:
-    "<strong>Enterprise-Scale Azure Landing Zoneを設計・展開</strong> — <strong>26サブスクリプション</strong>、マルチリージョン、Microsoft CAFおよびAzure Verified Modules準拠 — さらに<strong>複製により工業化を実証</strong>：テンプレートから2つ目のランディングゾーンを展開、<strong>差分はパラメータ6つのみ</strong>。",
+    "<strong>Enterprise-Scale Azure Landing Zoneを設計・展開</strong> — <strong>26サブスクリプション</strong>、マルチリージョン、Microsoft CAFおよびAzure Verified Modules準拠 — さらに<strong>ほぼ同一の2つ目のランディングゾーンとして複製</strong>：変更はサブスクリプション、アドレッシング、命名、パイプラインIDの6パラメータのみ。",
   job1_b2:
     "<strong>規制要件にプラットフォームを整合</strong>：<strong>CSSF Circular 22/806</strong>（Cloud Outsourcing）、<strong>DORA</strong>、<strong>NIS2</strong>、<strong>ISO 27001</strong>由来の統制、<strong>CIS Microsoft Azure</strong>ベースライン、<strong>永続的シークレットゼロ</strong>(OIDC / Workload Identity エンドツーエンド)、全PaaSへのPrivate Endpoints、顧客管理鍵暗号化を全面採用。",
   job1_b3:
