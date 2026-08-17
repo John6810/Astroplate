@@ -39,19 +39,19 @@ const dict = {
   job1_context:
     "Hired to build POST Luxembourg's cloud foundation — Grand Duchy telecom operator and postal bank, supervised by the CSSF. Mission: host the critical banking workloads on Azure under a compliant Cloud Outsourcing framework. No prior cloud footprint. {post_duration} of continuous delivery, managing a €2M cloud budget.",
   job1_b1:
-    "<strong>Designed and delivered an Enterprise-Scale Azure Landing Zone</strong> across <strong>26 subscriptions</strong>, multi-region, aligned with Microsoft CAF and Azure Verified Modules — foundation eligible to host workloads under banking regulation.",
+    "<strong>Designed and delivered an Enterprise-Scale Azure Landing Zone</strong> across <strong>26 subscriptions</strong>, multi-region, aligned with Microsoft CAF and Azure Verified Modules — then <strong>proved its industrialization by replicating it</strong>: a second landing zone stamped from the template, <strong>six parameters of difference</strong>.",
   job1_b2:
     "<strong>Aligned the platform with regulatory requirements</strong>: controls derived from <strong>CSSF Circular 22/806</strong> (Cloud Outsourcing), <strong>DORA</strong>, <strong>NIS2</strong> and <strong>ISO 27001</strong>, <strong>CIS Microsoft Azure</strong> baselines, <strong>zero persistent secrets</strong> (OIDC / Workload Identity end-to-end), Private Endpoints across all PaaS, customer-managed encryption everywhere.",
   job1_b3:
-    "<strong>Industrialised Infrastructure as Code</strong>: <strong>75+ production-ready Terraform modules</strong>, single Terragrunt pipeline across the whole perimeter, automated drift detection — immutability and full audit-ready traceability.",
+    "<strong>Ran IaC as a product</strong>: <strong>75+ production-ready Terraform modules</strong> — per-module CI, Renovate, security scans, Azure service-retirement watch — single Terragrunt pipeline, generation and reviews assisted by <strong>specialised AI agents</strong>.",
   job1_b4:
-    "<strong>Built the application platform</strong>: private AKS clusters in GitOps (Argo CD), <strong>Azure Virtual Desktop</strong> (Host Pools, FSLogix ZRS, Private Endpoints), enterprise-grade observability (managed Prometheus + Grafana, 20+ dashboards), AMBA alerts aligned with Microsoft production guidance.",
+    "<strong>Built the multi-tenant GitOps platform</strong> (private AKS, Argo CD): AppProject isolation, OPS/DEV split, automated team onboarding — zero kubectl, zero secrets. <strong>5 POST teams onboarded (~20 developers)</strong>, workloads in production.",
   job1_b5:
-    "<strong>Formalised internal governance</strong>: <strong>20 ADRs</strong>, 6 SRE runbooks, 10K-line enterprise wiki, strict naming / tagging / RBAC conventions — audit and onboarding foundation for future teams.",
+    "<strong>Put Azure Virtual Desktop in service</strong> (Host Pools, FSLogix ZRS, Private Endpoints, golden image) plus enterprise observability: managed Prometheus + Grafana, <strong>20+ dashboards</strong>, AMBA alerts aligned with Microsoft production guidance.",
   job1_b6:
-    "<strong>Designing the multi-cloud strategy</strong>: multi-account AWS Landing Zone in design (Control Tower, SCPs, IaC) to address resilience and supplier diversification requirements imposed by <strong>DORA</strong>.",
+    "<strong>Formalised internal governance</strong>: <strong>20 ADRs</strong>, 6 SRE runbooks, 10K-line enterprise wiki, strict naming / tagging / RBAC conventions — audit and onboarding foundation for future teams.",
   job1_b7:
-    "<strong>Tooled the project with a suite of specialised AI agents</strong> — codified conventions and gotchas, assisted module generation and accelerated architecture reviews.",
+    "<strong>Designing the multi-cloud strategy</strong>: multi-account AWS Landing Zone in design (Control Tower, SCPs, IaC) to address resilience and supplier diversification requirements imposed by <strong>DORA</strong>.",
   job1_link_github:
     "📦 terraform-azurerm-modules — my custom modules (open source) →",
 

@@ -37,19 +37,19 @@ const dict: Dict = {
   job1_context:
     "Recruté pour bâtir la fondation cloud de POST Luxembourg — opérateur télécom et banque postale du Grand-Duché, supervisé par la CSSF. Mission : héberger les workloads bancaires critiques sur Azure dans un cadre Cloud Outsourcing conforme. Aucun existant à l'arrivée. {post_duration} de delivery continue, avec pilotage d'un budget cloud de 2M€.",
   job1_b1:
-    "<strong>Conçu et livré une Azure Landing Zone Enterprise-Scale</strong> sur <strong>26 souscriptions</strong> multi-région, alignée Microsoft CAF et Azure Verified Modules — base éligible pour héberger des workloads sous régulation bancaire.",
+    "<strong>Conçu et livré une Azure Landing Zone Enterprise-Scale</strong> sur <strong>26 souscriptions</strong> multi-région, alignée Microsoft CAF et Azure Verified Modules — puis <strong>prouvé son industrialisation en la répliquant</strong> : une 2ᵉ landing zone déployée depuis le gabarit, <strong>six paramètres de différence</strong>.",
   job1_b2:
     "<strong>Aligné la plateforme sur les exigences réglementaires</strong> : contrôles dérivés <strong>CSSF Circular 22/806</strong> (Cloud Outsourcing), <strong>DORA</strong>, <strong>NIS2</strong> et <strong>ISO 27001</strong>, baselines <strong>CIS Microsoft Azure</strong>, <strong>zéro secret persistant</strong> (OIDC / Workload Identity end-to-end), Private Endpoints sur tous les PaaS, chiffrement client-managed généralisé.",
   job1_b3:
-    "<strong>Industrialisé l'Infrastructure as Code</strong> : <strong>75+ modules Terraform</strong> production-ready, pipeline Terragrunt unique sur tout le périmètre, drift detection automatisée — immutabilité et traçabilité full audit-ready.",
+    "<strong>Géré l'IaC comme un produit</strong> : <strong>75+ modules Terraform</strong> production-ready — CI par module, Renovate, scans sécurité, veille des retraits de services Azure — pipeline Terragrunt unique, génération et revues assistées par des <strong>agents IA spécialisés</strong>.",
   job1_b4:
-    "<strong>Bâti la plateforme applicative</strong> : Clusters AKS privés en GitOps (Argo CD), <strong>Azure Virtual Desktop</strong> (Host Pools, FSLogix ZRS, Private Endpoints), observabilité enterprise (Prometheus managé + Grafana, 20+ dashboards), alertes AMBA conformes aux recommandations Microsoft production.",
+    "<strong>Construit la plateforme GitOps multi-tenant</strong> (AKS privés, Argo CD) : isolation par AppProject, split OPS/DEV, onboarding d'équipe automatisé — zéro kubectl, zéro secret. <strong>5 équipes POST onboardées (~20 développeurs)</strong>, workloads en production.",
   job1_b5:
-    "<strong>Formalisé la gouvernance interne</strong> : <strong>20 ADRs</strong>, 6 runbooks SRE, wiki enterprise de 10K lignes, conventions strictes naming / tagging / RBAC — fondation d'audit et d'onboarding pour les équipes futures.",
+    "<strong>Mis Azure Virtual Desktop en service</strong> (Host Pools, FSLogix ZRS, Private Endpoints, golden image) et l'observabilité enterprise : Prometheus managé + Grafana, <strong>20+ dashboards</strong>, alertes AMBA conformes aux recommandations Microsoft production.",
   job1_b6:
-    "<strong>Conçoit la stratégie multi-cloud</strong> : Landing Zone AWS multi-compte en design (Control Tower, SCPs, IaC) pour répondre aux exigences de résilience et de diversification fournisseur posées par <strong>DORA</strong>.",
+    "<strong>Formalisé la gouvernance interne</strong> : <strong>20 ADRs</strong>, 6 runbooks SRE, wiki enterprise de 10K lignes, conventions strictes naming / tagging / RBAC — fondation d'audit et d'onboarding pour les équipes futures.",
   job1_b7:
-    "<strong>Outillé le projet d'une suite d'agents IA spécialisés</strong> — encodage des conventions et gotchas, génération assistée de modules et revues d'architecture accélérées.",
+    "<strong>Conçoit la stratégie multi-cloud</strong> : Landing Zone AWS multi-compte en design (Control Tower, SCPs, IaC) pour répondre aux exigences de résilience et de diversification fournisseur posées par <strong>DORA</strong>.",
   job1_link_github:
     "📦 terraform-azurerm-modules — mes modules custom (open source) →",
 
