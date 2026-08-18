@@ -19,7 +19,7 @@ const dict: Dict = {
   hero_download_pdf: "Télécharger le CV (PDF)",
 
   stat_years_label: "ans d'IT",
-  stat_budget_label: "budget cloud piloté",
+  stat_budget_label: "de budgets IT pilotés",
   stat_alz_label: "Landing Zones from scratch",
   stat_subscriptions_label: "souscriptions Azure gouvernées",
   stat_modules_label: "modules Terraform production-ready",
@@ -57,9 +57,9 @@ const dict: Dict = {
   job2_meta: "Mission : Aéroport de Luxembourg",
   job2_date: "Août 2023 — Juil. 2024",
   job2_context:
-    "Mission consulting via Alten pour la modernisation IT de l'Aéroport de Luxembourg — infrastructure critique 24/7 du transport aérien luxembourgeois. Objectif double : migrer la messagerie vers Microsoft 365 et poser les premières fondations cloud de l'aéroport.",
+    "Mission consulting via Alten pour la modernisation IT de l'Aéroport de Luxembourg — infrastructure critique 24/7 du transport aérien luxembourgeois. Objectif : créer de zéro le socle Microsoft 365 / Entra ID de l'aéroport — aucun tenant existant — le sécuriser, migrer la messagerie, et poser les premières fondations cloud.",
   job2_b1:
-    "<strong>Migré 500+ boîtes Exchange on-premises vers Microsoft 365</strong> — coexistence hybride, bascule progressive, retrait du on-prem, zéro perte de service.",
+    "<strong>Créé le tenant Microsoft 365 / Entra ID from scratch, puis migré 500+ boîtes Exchange on-premises</strong> — coexistence hybride, bascule progressive, retrait du on-prem, zéro perte de service.",
   job2_b2:
     "<strong>Conçu et déployé le premier Azure Landing Zone de l'aéroport</strong> — fondation modulaire alignée Microsoft CAF, posée pour héberger les futurs workloads de la DSI.",
   job2_b3:

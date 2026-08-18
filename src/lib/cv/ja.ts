@@ -19,7 +19,7 @@ const dict: Dict = {
   hero_download_pdf: "履歴書をダウンロード（PDF）",
 
   stat_years_label: "年のIT経験",
-  stat_budget_label: "運用クラウド予算",
+  stat_budget_label: "運用IT予算（累計）",
   stat_alz_label: "Landing Zones（ゼロから構築）",
   stat_subscriptions_label: "管理対象 Azure サブスクリプション",
   stat_modules_label: "プロダクションレディTerraformモジュール",
@@ -57,9 +57,9 @@ const dict: Dict = {
   job2_meta: "ミッション：ルクセンブルク空港",
   job2_date: "2023年8月 — 2024年7月",
   job2_context:
-    "ルクセンブルク空港のIT近代化のため、Alten経由でコンサルティングミッション — ルクセンブルク航空輸送の24時間365日稼働の重要インフラ。二重の目標：メールをMicrosoft 365に移行し、空港初のクラウド基盤を整備すること。",
+    "ルクセンブルク空港のIT近代化のため、Alten経由でコンサルティングミッション — ルクセンブルク航空輸送の24時間365日稼働の重要インフラ。目標：空港のMicrosoft 365 / Entra ID基盤をゼロから構築（既存テナントなし）、セキュリティ確立、メール移行、そして最初のクラウド基盤整備。",
   job2_b1:
-    "<strong>オンプレミスExchangeのメールボックス500超をMicrosoft 365へ移行</strong> — ハイブリッド共存、段階的切替、オンプレミス撤去、サービス無停止。",
+    "<strong>Microsoft 365 / Entra IDテナントをゼロから構築し、オンプレミスExchangeのメールボックス500超を移行</strong> — ハイブリッド共存、段階的切替、オンプレミス撤去、サービス無停止。",
   job2_b2:
     "<strong>空港初のAzure Landing Zoneを設計・展開</strong> — Microsoft CAFに準拠したモジュラー基盤、情報システム部門の将来のワークロードを収容可能。",
   job2_b3:
