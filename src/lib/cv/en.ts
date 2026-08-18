@@ -37,7 +37,7 @@ const dict = {
   job1_meta: "Luxembourg",
   job1_date: "Aug 2024 — Present",
   job1_context:
-    "Hired to build POST Luxembourg's cloud foundation — Grand Duchy telecom operator and postal bank, supervised by the CSSF. Mission: host the critical banking workloads on Azure under a compliant Cloud Outsourcing framework. No prior cloud footprint. {post_duration} of continuous delivery, managing a €2M cloud budget.",
+    "Hired to build POST Luxembourg's cloud foundation — Grand Duchy telecom operator and postal bank, supervised by the CSSF. Mission: host the critical banking workloads on Azure under a compliant Cloud Outsourcing framework. No prior cloud footprint. {post_duration} of continuous delivery, managing a €1.5M cloud budget.",
   job1_b1:
     "<strong>Designed and delivered an Enterprise-Scale Azure Landing Zone</strong> across <strong>26 subscriptions</strong>, multi-region, aligned with Microsoft CAF and Azure Verified Modules — then <strong>replicated it into a second, near-identical landing zone</strong>: only six parameters change (subscription, addressing, naming, pipeline identity).",
   job1_b2:
