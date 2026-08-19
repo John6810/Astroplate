@@ -66,6 +66,10 @@ This is the part I'd underline for anyone about to stamp their second zone: the 
 
 **The bootstrap chicken-and-egg.** The foundation code was ready before the deployment chain existed — no service connection, no pipeline identity, no gated environment. Standing up that chain first means days of manual round-trips while the code sits unverified. We applied the foundation **locally, with a human identity, onto the exact state path the pipeline would later use** — then wired the pipeline and let it adopt the state. The wager: adoption with zero recreations. It settled: the pipeline's first plan came back `No changes` on every unit. Local apply is now bootstrap-and-break-glass only, and that's written down too.
 
+## What neither repo has to carry
+
+There's a third category the split made visible: things that appear in both zones **without a line of code in either repo**. The parent platform's policies stamp every child automatically — the baseline monitoring resources materialized in the second zone the moment the subscription landed under the right management group, identical to the first zone's, deployed by policy rather than by pipeline. A landing zone template doesn't have to copy the governance layer, because governance done right is enforced from above, not vendored below. (And the shared state store the ADR calls a critical asset? It has an availability alert on it — declared critical _and_ monitored as such.)
+
 ## The duplication we kept
 
 Two repos now carry two copies of the pipeline and the conventions, and the ADR says so out loud: this is **duplication debt, accepted**. The alternatives were all worse at this count — a fresh scaffold re-pays the debugging for nothing; a monorepo erases exactly the state, RBAC and responsibility boundaries that justify separate zones; and factoring shared pipeline templates _now_, at two occurrences, is premature abstraction with a maintenance bill.
